@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CardFlow - Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+        background: linear-gradient(to right, rgb(140, 140, 240), rgb(231, 231, 225));
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 220px;
+      height: 100%;
+      background-color:rgb(2, 2, 21);
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    .sidebar h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 20px 0;
+    }
+
+    .sidebar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 8px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #34495e;
+    }
+
+    .main-content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #1976d2;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>CardFlow</h2>
+    <ul>
+      <li><a href="dashboard.html" onclick="side('home-page')">Dash board</a></li>
+      <li><a href="mycards.html" onclick="side('cards')">My Cards</a></li>
+      <li><a href="transactions.html" onclick="side('transactions')">Transactions</a></li>
+      <li><a href="profile.html" onclick="side('profile')">Profile</a></li>
+       <li><a href="https://search.brave.com/search?q=google" onclick="side('logout')">logout</a></li>
+        <li><a href="index.html" onclick="side('about us')">about us</a></li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <h1>Welcome to CardFlow Dashboard</h1>
+
+    <div class="card">
+      <h3>Overview</h3>
+      <p>Total Cards: 2</p>
+      <p>Last Transaction: ₹2500 on 2026-05-09</p>
+    </div>
+
+    <div class="card">
+      <h3>Quick Links</h3>
+      <p>Manage your cards, view transactions, and update your profile easily from the sidebar.</p>
+    </div>
+  </div>
+  <script>
+    function side(id){
+      alert("Switching to: " + id);
+    }
+ 
+  </script>
+</body>
+</html>

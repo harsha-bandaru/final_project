@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Profile</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+ background: linear-gradient(to right, rgb(140, 140, 240), rgb(231, 231, 225));
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      width: 300px;
+
+    }
+
+    .card:hover {
+
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1976d2;
+    }
+
+    .card p {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .welcome-card {
+      text-align: center;
+    }
+
+    .welcome-card p {
+      font-size: 18px;
+      color: #1976d2;
+      margin-bottom: 20px;
+    }
+
+    .welcome-card button {
+      background: #3f51b5;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .welcome-card button:hover {
+      background: #283593;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card profile-card">
+      <h2>User Profile</h2>
+      <p><strong>Name:</strong> <span id="name"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Password:</strong> <span id="password"></span></p>
+      <p><strong>No of Cards:</strong> <span id="cards"></span></p>
+    </div>
+
+    <div class="card welcome-card">
+      <p>Welcome to CardFlow!!!</p>
+      <a href="dashboard.html" onclick="myt()">
+        <button>welcome</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("name").textContent = localStorage.getItem("name");
+    document.getElementById("email").textContent = localStorage.getItem("email");
+    document.getElementById("password").textContent = localStorage.getItem("password");
+    document.getElementById("cards").textContent = localStorage.getItem("cards");
+
+    function myt(){
+      alert("Going to dashboard...");
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Input Demo</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-image:url(Copilot_20260509_222956.png);
+       background-size: cover;  
+      background-position: center;
+      background-repeat: no-repeat; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-box {
+      background-color:rgb(229, 229, 234);
+      padding-left: 25px;
+      padding-right:25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 320px;
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1976d2;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      background: #1976d2;
+      color: #fff;
+      border:black;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .form-box button:hover {
+      background-color: #1565c0;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Enter Your Details</h2>
+    <form id="userForm">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="number" id="cards" placeholder="No of Cards" required>
+      <a href="dashboard.html">
+      <button type="submit" onclick="trace()">
+        Submit
+    </button>
+      </a>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("userForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      localStorage.setItem("name", document.getElementById("name").value);
+      localStorage.setItem("email", document.getElementById("email").value);
+      localStorage.setItem("password", document.getElementById("password").value);
+      localStorage.setItem("cards", document.getElementById("cards").value);
+
+      window.location.href = "profile.html";
+
+    
+    });
+      function trace(){
+        alert("submission  over");
+      }
+  </script>
+</body>
+</html>

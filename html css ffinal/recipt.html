@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Receipt</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom, #e3f2fd, #d1c4e9);
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .receipt {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      width: 400px;
+      text-align: center;
+    }
+
+    .receipt h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .receipt p {
+      margin: 8px 0;
+      font-size: 15px;
+      color: #444;
+    }
+
+    .success {
+      font-size: 18px;
+      font-weight: bold;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .divider {
+      border-top: 1px dashed #ccc;
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #3f51b5;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .btn:hover {
+      background: #283593;
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+    <h2>Bank Receipt</h2>
+    <div class="success">✅ Transaction Successful</div>
+
+    <p><strong>Date:</strong> 2026-05-10</p>
+    <p><strong>Transaction ID:</strong> TXN123456789</p>
+    <p><strong>Account Holder:</strong> Harsha</p>
+    <p><strong>Amount:</strong> ₹2500</p>
+    <p><strong>Payment Method:</strong> Debit Card</p>
+
+    <div class="divider"></div>
+    <p>Thank you for banking with us!</p>
+
+    <a href="dashboard.html" class="btn">Back to Dashboard</a>
+  </div>
+</body>
+</html>

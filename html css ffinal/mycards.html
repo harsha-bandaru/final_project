@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Card Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to top, rgb(140, 140, 240), rgb(231, 231, 225));   
+      margin: 20px;
+       padding-top:30px;
+    }
+
+    .c1 {
+      display: flex;
+      justify-content: center; 
+      gap: 20px; 
+    }
+
+    pre {
+      background: #ffffff;
+      border: 2px solid #90caf9;  
+      border-radius: 6px;
+      padding-right:900px;
+      width: 260px;
+      font-size: 14px;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    #cards pre {
+      background: #fff3e0;        
+      border: 2px solid #ffb74d;   
+    }
+
+    form {
+      background: #ffffff;
+      padding-right:900px;
+      padding-top:30px;
+      padding-left:70px;;
+      padding: bottom 250px;;
+      border: 2px solid #81c784;  
+      border-radius: 8px;
+      width: 300px;  
+      margin-top: 20px;
+      margin-bottom:40px;
+    
+    }
+
+    form input {
+      width: 100%;
+      padding: 9px;
+      margin: 6px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #1976d2;   
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 15px;
+    }
+    form button:hover {
+      background-color: #1565c0;  
+    }
+
+    .btn {
+    display: inline-block;
+    background-color: #3f51b5; 
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;     
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn:hover {
+    background-color: #283593;  
+  transform: translateY(-2px);
+  }
+
+  .btn:active {
+    transform: scale(0.96);     
+  }
+    
+ 
+  
+  </style>
+</head>
+<body>
+  <DIV style="font-size: larger;font-weight: 600;">
+   <bold>  CARDS</bold>
+  </DIV>
+  <pre class="c1">
+    card name: HDFC Visa
+    card number: 3456
+    due date: 3
+  </pre>
+  <pre class="c1">
+    card name: ICICI Visa
+    card number: 3456
+    due date: 3
+  </pre>
+
+ <div id="cards"></div>
+  <h2>Add New Card</h2>
+  
+  <form id="cardForm">
+    <input type="text" placeholder="Card Holder Name" class="t" required><br><br>
+    <input type="number" placeholder="Card Number" class="t" required><br><br>
+    <input type="date" placeholder="Expiry Date" class="t" required><br><br>
+    <input type="text" placeholder="CVV" class="t" required><br><br>
+    <button type="submit">Add Card</button>
+    <br>
+    <br> 
+     </form>
+  <a  href="dashboard.html" class="btn" style="display: inline-block;">
+              <button onclick="godash()" id="b1">back to list</button>
+      </a>
+ 
+ 
+
+  <script>
+    document.getElementById("cardForm").addEventListener("submit", function(event){
+      event.preventDefault(); 
+      let inputs = document.getElementsByClassName("t");
+      let holder = inputs[0].value;
+      let number = inputs[1].value;
+      let expiry = inputs[2].value;
+      let cvv = inputs[3].value;
+
+      document.getElementById("cards").innerHTML += `
+        <pre>
+          card name: ${holder}
+          card number: ${number}
+          expiry date: ${expiry}
+          cvv: ${cvv}
+        </pre>
+      `;
+
+      for(let i=0; i<inputs.length; i++){
+        inputs[i].value = "";
+      }
+    });
+    function mydash(){
+      alert("going back to dash board");
+    }
+  </script>
+</body>
+</html>
